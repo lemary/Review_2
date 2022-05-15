@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WikiMIPT</title>
+</head>
+<body>
+    <form action="{{ url_for('to_demonstrate') }}" method="post">
+        <input name="name" id="name" placeholder="Teacher Full Name" maxlength="20" required><br><br>
+        <input type="submit" value="Get Info">
+    </form>
+
+    {% for message in messages %}
+    <h4> {{ message }} <br></h4>
+    {% endfor %}
+
+    <br><br>
+
+    <button onclick="window.location.href='{{ url_for('home') }}'"><h3>Go Home</h3></button>
+
+</body>
+
+</html>
