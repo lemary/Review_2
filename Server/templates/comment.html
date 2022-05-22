@@ -3,18 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>WikiMIPT</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            background-image: url("https://mipt.ru/upload/iblock/31a/dsc_2738.jpg");
+            background-size: 100%;
+        }
+
+        h1 {
+            text-align: center
+        }
+
+        .container {
+            margin-top: 10%;
+            height: 400px;
+            width: 400px;
+            left: 35%;
+            top: 40%;
+            position: relative;
+            border: 3px solid grey;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 35%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        form {
+            margin-left: 5%;
+            width: 250px;
+        }
+    </style>
 </head>
 <body>
-<form action="{{ url_for('create_comment') }}" method="post">
-    <input type="text" name="name" id="name" maxlength="20" placeholder="Teacher Full Name" required><br><br>
-    <input type="text" name="comment" id ="comment" maxlength="20" placeholder="Comment" required><br><br>
-    <input type="number" name="mark" id="mark" min = '0' max = '10'placeholder="Mark" required><br><br>
-    <input type="submit" value="Submit">
+<div class="container">
+    <div class="center">
+        <form action="{{ url_for('create_comment') }}" method="post">
+            <input class="w3-input w3-border w3-sand" type="text" name="name" id="name" maxlength="20"
+                   placeholder="Teacher Full Name" required><br><br>
+            <input class="w3-input w3-border w3-sand" type="text" name="comment" id="comment" maxlength="20"
+                   placeholder="Comment" required><br><br>
+            <input class="w3-input w3-border w3-sand" type="number" name="mark" id="mark" min='0' max='10'
+                   placeholder="Mark" required><br><br>
+            <input class="w3-button w3-black w3-round-xlarge" type="submit" value="Submit">
 
-    <br><br>
-    <button onclick="window.location.href='{{ url_for('home') }}'"><h3>Go Home</h3></button>
-</form>
-
+            <br><br>
+            <button class="w3-button w3-black w3-round-xlarge" onclick="window.location.href='{{ url_for('home') }}'">
+                <h6>Go Home</h6></button>
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
