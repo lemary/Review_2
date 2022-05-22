@@ -1,16 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>WikiMIPT</title>
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8">
+    <title>WikiMIPT</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            background-image: url("https://mipt.ru/upload/iblock/31a/dsc_2738.jpg");
+            background-size: 100%;
+            --color-number: #999;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            width: 100px;
+        }
+
+        .container {
+            margin-top: 10%;
+            height: 200px;
+            width: 400px;
+            left: 35%;
+            top: 40%;
+            position: relative;
+            border: 3px solid grey;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 48%;
+            margin-top: 10%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container">
     <h1> Welcome to WikiMIPT </h1>
-    <button onclick="window.location.href='{{ url_for('to_comment') }}'"><h3>
-        Comment
-    </h3></a></button>
-    <button onclick="window.location.href='{{ url_for('get_most_common_characters') }}'"><h3>
-        Archive
-    </h3></a></button>
-    </body>
+    <div class="center">
+        <button class="w3-button w3-black w3-round-xlarge"
+                onclick="window.location.href='{{ url_for('to_comment') }}'"><h6>
+            Comment
+        </h6>
+        </button>
+        <button class="w3-button w3-black w3-round-xlarge"
+                onclick="window.location.href='{{ url_for('get_most_common_characters') }}'"><h6>
+            Archive
+        </h6>
+        </button>
+    </div>
+</div>
+</body>
 </html>
